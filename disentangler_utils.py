@@ -126,7 +126,7 @@ def get_hess_matvec(E, Q, X, l, r, b, c, k):
     dfds[k:] = 2*s[k:]
 
     m = U.shape[0]
-    k = U.shape[1]
+    p = U.shape[1]
     n = Vh.shape[1]
     
     AEX = A(E.dot(X), l, r, b, c)
@@ -138,7 +138,7 @@ def get_hess_matvec(E, Q, X, l, r, b, c, k):
     DUE = U @ (F*(U.T @ AEX @ Vh.T @ np.diag(s) + np.diag(s) @ Vh @ AEX.T @ U)) + \
           (np.eye(m) - U @ U.T) @ AEX @ Vh.T @ np.diag(1/s)
     
-    d2fds2 = np.zeros(k) # a vector
+    d2fds2 = np.zeros(p) # a vector
     d2fds2[k:] = 2
     
     # a matrix 
