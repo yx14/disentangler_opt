@@ -4,7 +4,7 @@ This python repository accompanies the arXiv pre-print:2508.19409. The scripts i
 
 # Installation 
 
-The scripts are in python, and have been tested on [TODO: mac op system] and [TODO: perlmutter op system]. A environment manager such as conda may be used to install dependencies. The typical install time is [TODO: estimate minutes.]  
+The scripts are in python, and have been tested on macOS and Linux systems. A environment manager such as conda may be used to install dependencies. The installation for pymanopt is found at: https://pymanopt.org/docs/latest/quickstart.html#installation. Installation of all dependencies takes a few minutes.  
 
 ## Dependencies
 
@@ -13,9 +13,9 @@ The scripts were tested using the following versions:
 - numpy 2.1.3
 - scipy 1.14.1
 - pymanopt 2.2.1
-- matplotlib X (for running scripts in the test subdirectory)
+- matplotlib 3.10.0 (only for running scripts in the test subdirectory)
 
-We make two changes to the pymanopt package. First, in order to enable logging for the trust-regions newton optimizer, we add the following to the while loop (line 174) in pymanopt/optimizers/trust_regions.py:
+We make two changes to the pymanopt package. First, in order to enable logging for the trust-regions newton optimizer, we add the following to the while loop (line 171) in pymanopt/optimizers/trust_regions.py:
 
 self._add_log_entry(
                 iteration=iteration,
@@ -28,7 +28,7 @@ Second, the default svd is lapack's gesdd, which can fail for various objectives
 
 scp.linalg.svd(Y, lapack_driver='gesvd')
 
-This includes modifying line 76 of the polar retraction in pymanopt/manifolds/group.py. See: https://stackoverflow.com/questions/63761366/numpy-linalg-linalgerror-svd-did-not-converge-in-linear-least-squares-on-first
+This includes modifying line 75 of the polar retraction in pymanopt/manifolds/group.py. See: https://stackoverflow.com/questions/63761366/numpy-linalg-linalgerror-svd-did-not-converge-in-linear-least-squares-on-first
 
 # List of python files
 

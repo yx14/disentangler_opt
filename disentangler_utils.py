@@ -72,13 +72,10 @@ def A_inv(mat, l, r, b, c):
     return t_p.reshape([l*r, b*c])
  
 def get_grad_euc(Q, X, l, r, b, c, k):
-    """
-    Find the Euclidean gradient of the truncation error objective function c_k:
+    # Find the Euclidean gradient of the truncation error objective function c_k:
+    # Let m = min(lc, rb).
+    # c_k \equiv \sum_{i=k}^{m-1} (s_i)^2
     
-    Let m = min(lc, rb).
-
-    c_k \equiv \sum_{i=k}^{m-1} (s_i)^2
-    """
     # compute the singular values
     QX = Q.dot(X)
     AQX = A(QX, l, r, b, c)
@@ -93,13 +90,10 @@ def get_grad_euc(Q, X, l, r, b, c, k):
     return grad_euc
 
 def get_grad(Q, X, l, r, b, c, k):
-    """
-    Find the Riemannian gradient of the truncation error objective function c_k:
+    # Find the Riemannian gradient of the truncation error objective function c_k:
+    # Let m = min(lc, rb).s
+    # c_k = \sum_{i=k}^{m-1} (s_i)^2
     
-    Let m = min(lc, rb).
-
-    c_k = \sum_{i=k}^{m-1} (s_i)^2
-    """
     grad_euc = get_grad_euc(Q, X, l, r, b, c, k)
     
     # projection onto tangent space of orthogonal matrix manifold at Q
@@ -173,13 +167,10 @@ def get_hess_matvec(E, Q, X, l, r, b, c, k):
 ########## Other objective functions ##########
 
 def get_grad_euc_renyi(Q, X, l, r, b, c, alpha):
-    """
-    Find the Euclidean gradient of the Renyi-alpha entropy, S^{\alpha}:
-    
-    Let m = min(lc, rb).
+    # Find the Euclidean gradient of the Renyi-alpha entropy, S^{\alpha}:
+    # Let m = min(lc, rb).
+    # S^{\alpha} \equiv 1/(1-\alpha) ln(\sum_{i=0}^{m-1} s_i^{2\alpha})
 
-    S^{\alpha} \equiv 1/(1-\alpha) ln(\sum_{i=0}^{m-1} s_i^{2\alpha})
-    """
     # compute the singular values
     QX = Q.dot(X)
     AQX = A(QX, l, r, b, c)
@@ -193,13 +184,10 @@ def get_grad_euc_renyi(Q, X, l, r, b, c, alpha):
     return grad_euc
 
 def get_grad_euc_vn(Q, X, l, r, b, c):
-    """
-    Find the Euclidean gradient of the von Neumann entropy, S^{vN}:
+    # Find the Euclidean gradient of the von Neumann entropy, S^{vN}:
+    # Let m = min(lc, rb).
+    # S^{vN} \equiv -\sum_{i=0}^{m-1} s_i^2 ln(s_i^2)
     
-    Let m = min(lc, rb).
-
-    S^{vN} \equiv -\sum_{i=0}^{m-1} s_i^2 ln(s_i^2)
-    """
     # compute the singular values
     QX = Q.dot(X)
     AQX = A(QX, l, r, b, c)
