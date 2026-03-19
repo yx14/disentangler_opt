@@ -14,7 +14,7 @@ def get_trunc_err(s):
     return trunc_err
 def main():
 
-    parser = argparse.ArgumentParser(description="Xinary search for disentangling given a tolerance, \
+    parser = argparse.ArgumentParser(description="Binary search for disentangling given a tolerance, \
     using the target rank objective function.")
     # binary search parameters
     parser.add_argument('-eps', dest='eps', default=1e-6, type=float, help='requested tolerance for binary search')
@@ -32,10 +32,12 @@ def main():
     cg iterations')
     parser.add_argument('-cg_max_iter_init', dest='cg_max_iter_init', default=4000, type=int, help='maximum number of\
     cg iterations used for the Renyi-1/2 initialization')
+    parser.add_argument('-data_folder', default='./results/', help='folder for saving optimization results', type=str)
 
     args = parser.parse_args()
     
-    filename = './results/binsearch_' 
+    filename = args.data_folder + 'binsearch_' 
+    
     ####### dimensions [l, r, b, c] #######
     if len(args.dim) == 1:
        n = args.dim[0]

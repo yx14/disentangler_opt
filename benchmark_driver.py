@@ -29,10 +29,11 @@ def main():
     parser.add_argument('-newton_max_inner', dest='newton_max_inner', default=100, type=int, help='maximum number of\
     inner conjugate gradient iterations within a single (outer) iteration of newton')
     parser.add_argument('--save_svs', dest='save_svs', action='store_true', help='whether to save singular values/iteration')
+    parser.add_argument('-data_folder', default='./results/', help='folder for saving optimization results', type=str)
     
     args = parser.parse_args()
  
-    filename = "./results/"
+    filename = args.data_folder
     
     ####### dimensions [l, r, b, c] #######
     if len(args.dim) == 1:

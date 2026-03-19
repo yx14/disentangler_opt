@@ -1,0 +1,11 @@
+name: disentangle
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.13.0
+  - matplotlib=3.10.0
+  - numpy=2.1.3
+  - scipy=1.14.1
+  - pip:
+    - git+https://github.com/yx14/pymanopt.git
