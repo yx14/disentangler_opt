@@ -1,5 +1,6 @@
 import argparse
 from plotting import (
+    fig5,
     fig7a, fig7b, 
     fig8a, fig8b,
     fig9a, fig9b,
@@ -9,6 +10,7 @@ from plotting import (
 )
 
 ACTIONS = {
+    "5": fig5,
     "7a": fig7a,
     "7b": fig7b,
     "8a": fig8a,
@@ -36,8 +38,10 @@ def main():
 
     if action_func is None:
         raise ValueError(f"Unknown action: {args.action}")
-
-    action_func(args.data_folder, args.save_folder)     
+    elif args.action == '5':
+        fig5(args.save_folder)
+    else:
+        action_func(args.data_folder, args.save_folder)     
 
     return
 

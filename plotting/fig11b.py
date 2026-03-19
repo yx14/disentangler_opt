@@ -1,4 +1,4 @@
-from plotting_utils import *
+from .plotting_utils import *
 
 # different objective functions for rank estimation: isoTNS tensor
 def fig11b(data_folder, save_folder):

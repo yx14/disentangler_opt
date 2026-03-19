@@ -1,4 +1,4 @@
-from plotting_utils import *
+from .plotting_utils import *
 
 # singular value spectrum after optimizing different objective functions: random tensor
 def fig12a(data_folder, save_folder):

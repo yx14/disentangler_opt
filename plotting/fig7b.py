@@ -1,4 +1,4 @@
-from plotting_utils import *
+from .plotting_utils import *
 
 # iteration count: isoTNS tensor
 def fig7b(data_folder, save_folder):

@@ -1,4 +1,4 @@
-from plotting_utils import *
+from .plotting_utils import *
 
 # Wall time: random tensor
 def fig8a(data_folder, save_folder):

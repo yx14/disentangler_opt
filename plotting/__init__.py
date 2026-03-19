@@ -1,3 +1,4 @@
+from .fig5 import fig5
 from .fig7a import fig7a
 from .fig7b import fig7b
 from .fig8a import fig8a

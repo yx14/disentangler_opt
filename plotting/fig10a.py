@@ -1,4 +1,4 @@
-from plotting_utils import *
+from .plotting_utils import *
 
 # wall time for Alt + RCG hybrid methods: random tensor
 def fig10a(data_folder, save_folder):

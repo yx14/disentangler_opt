@@ -1,4 +1,4 @@
-from plotting_utils import *
+from .plotting_utils import *
 
 # iteration count: random tensor
 def fig7a(data_folder, save_folder):

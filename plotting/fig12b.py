@@ -1,4 +1,4 @@
-from plotting_utils import *
+from .plotting_utils import *
 
 # singular value spectrum after optimizing different objective functions: isoTNS tensor
 def fig12b(data_folder, save_folder):

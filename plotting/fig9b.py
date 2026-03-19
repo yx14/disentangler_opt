@@ -1,4 +1,4 @@
-from plotting_utils import *
+from .plotting_utils import *
 
 # singular value spectrum: isoTNS tensor
 # for different algorithms, the spectra correspond to approximately the same wall time

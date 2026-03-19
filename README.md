@@ -176,6 +176,11 @@ To generate and save a figure, the figure number (e.g. 7a) is specified as:
 python make_figure.py 7a -data_folder manuscript_data/ -save_folder figures/
 ```
 
+For Figure 5 (which examines the cost landscape for a random tensor using a fixed seed, and does not rely on manuscript_data) and save an SVG file in figures:
+```
+python make_figure.py 5 -save_folder figures/
+```
+
 ## Table generation
 
 By default, we create tables using data in manuscript_data, and save the table as a CSV file in tables. The "make_table.py" file generates Tables 1 and 2.

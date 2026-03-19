@@ -1,4 +1,4 @@
-from plotting_utils import *
+from .plotting_utils import *
 
 # Wall time: isoTNS tensor
 def fig8b(data_folder, save_folder):

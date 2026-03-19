@@ -1,4 +1,4 @@
-from plotting_utils import *
+from .plotting_utils import *
 
 # wall time for Alt + RCG hybrid methods: isoTNS tensor
 def fig10d(data_folder, save_folder):
