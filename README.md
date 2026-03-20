@@ -89,16 +89,16 @@ Figs 7a, 8a, and 9a:
 ```
 python benchmark_driver.py -type randn -dim 12 -obj rank -rank 44 -disentangler alt --save_svs -data_folder results/
 python benchmark_driver.py -type randn -dim 12 -obj rank -rank 44 -disentangler cg --save_svs -data_folder results/
+python benchmark_driver.py -type randn -dim 12 -obj rank -rank 44 -disentangler newton -reg 0.0 --save_svs -data_folder results/
 python benchmark_driver.py -type randn -dim 12 -obj rank -rank 44 -disentangler newton --save_svs -data_folder results/
-python benchmark_driver.py -type randn -dim 12 -obj rank -rank 44 -disentangler newton -reg --save_svs -data_folder results/
 ```
 
 Figs 7b, 8b, and 9b:
 ```
 python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 8 -disentangler alt --save_svs -data_folder results/
 python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 8 -disentangler cg --save_svs -data_folder results/
+python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 8 -disentangler newton -reg 0.0 --save_svs -data_folder results/
 python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 8 -disentangler newton --save_svs -data_folder results/
-python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 8 -disentangler newton -reg --save_svs -data_folder results/
 ```
 
 Fig 10a:
@@ -125,20 +125,20 @@ Fig 10c:
 ```
 for i in {0..4}; do
     python benchmark_driver.py -type randn -dim 12 -seed $i -obj rank -rank 44 -disentangler alt -data_folder results/
-    python benchmark_driver.py -type randn -dim 12 -seed $i -obj rank -rank 44 -disentangler newton -data_folder results/
-    python benchmark_driver.py -type randn -dim 12 -seed $i -obj rank -rank 44 -disentangler altnewton -alt_max_iter 5 -data_folder results/
-    python benchmark_driver.py -type randn -dim 12 -seed $i -obj rank -rank 44 -disentangler altnewton -alt_max_iter 10 -data_folder results/
-    python benchmark_driver.py -type randn -dim 12 -seed $i -obj rank -rank 44 -disentangler altnewton -alt_max_iter 20 -data_folder results/
+    python benchmark_driver.py -type randn -dim 12 -seed $i -obj rank -rank 44 -disentangler newton -reg 0.0 -data_folder results/
+    python benchmark_driver.py -type randn -dim 12 -seed $i -obj rank -rank 44 -disentangler altnewton -alt_max_iter 5 -reg 0.0 -data_folder results/
+    python benchmark_driver.py -type randn -dim 12 -seed $i -obj rank -rank 44 -disentangler altnewton -alt_max_iter 10 -reg 0.0 -data_folder results/
+    python benchmark_driver.py -type randn -dim 12 -seed $i -obj rank -rank 44 -disentangler altnewton -alt_max_iter 20 -reg 0.0 -data_folder results/
 done
 ```
 
 Fig 10d:
 ```
 python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 16 -disentangler alt -data_folder results/
-python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 16 -disentangler newton -data_folder results/
-python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 16 -disentangler altnewton -alt_max_iter 250 -data_folder results/
-python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 16 -disentangler altnewton -alt_max_iter 500 -data_folder results/
-python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 16 -disentangler altnewton -alt_max_iter 1000 -data_folder results/
+python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 16 -disentangler newton -reg 0.0 -data_folder results/
+python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 16 -disentangler altnewton -alt_max_iter 250 -reg 0.0 -data_folder results/
+python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 16 -disentangler altnewton -alt_max_iter 500 -reg 0.0 -data_folder results/
+python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 16 -disentangler altnewton -alt_max_iter 1000 -reg 0.0 -data_folder results/
 ```
 
 Figs 11a and 12a:

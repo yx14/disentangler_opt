@@ -14,7 +14,7 @@ def fig10d(data_folder, save_folder):
 
     disentanglers = ['Alt', 'RTRN', 'Alt-iter250-RTRN', 'Alt-iter500-RTRN', 'Alt-iter1000-RTRN']
     disentanglers_iter = ['alt_max_iter10000_', 'newton_reg0.00e+00_maxinner_100']
-    disentanglers_iter += ['alt_max_iter%d_newton_reg0.00e+00_'%(maxiter) for maxiter in maxiters]
+    disentanglers_iter += ['alt_max_iter%d_newton_reg0.00e+00_maxinner_100'%(maxiter) for maxiter in maxiters]
 
     # color and line cycle indices
     c_idxs = [0, 2, 5, 7, 6]
@@ -48,7 +48,7 @@ def fig10d(data_folder, save_folder):
 
         
     plt.yscale('log')
-    plt.legend(frameon=False, bbox_to_anchor=[2, 1.1, 0, 0])
+    plt.legend(frameon=False, bbox_to_anchor=(1.05, 1), loc='upper left')
 
     plt.xlabel('Time (s)')
     plt.ylabel('$c_{%d}$'%(rank))
@@ -89,7 +89,7 @@ def fig10d(data_folder, save_folder):
 
 
     plt.yscale('log')
-    plt.legend(frameon=False, bbox_to_anchor=[2, 1.1, 0, 0])
+    plt.legend(frameon=False, bbox_to_anchor=(1.05, 1), loc='upper left')
 
     plt.xlabel('Time (s)')
     plt.ylabel(r'$|\mathrm{grad} \ c_{%d}|$'%(rank))

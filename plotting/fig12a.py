@@ -34,7 +34,7 @@ def fig12a(data_folder, save_folder):
                                                     n, n, n, n, rank, 'cg_max_iter4000_'))
 
         plt.plot(range(n*n), test['sv_after'], c=cmap_custom_purple(0.15 + 0.65*rank_idx/2), 
-                 label='Target Rank $k = %d$'%(rank), lw=2)
+                 label='Target Rank, $k = %d$'%(rank), lw=2)
     
     plt.xlabel('$i$')
     plt.ylabel(r'$\sigma_i$')

@@ -23,6 +23,8 @@ ACTIONS = {
     "10d": fig10d,
     "11a": fig11a,
     "11b": fig11b,
+    "12a": fig12a,
+    "12b": fig12b,
 }
 
 def main():

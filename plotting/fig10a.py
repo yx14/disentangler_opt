@@ -79,7 +79,7 @@ def fig10a(data_folder, save_folder):
                  lw=2, linestyle=l_cycle[l_idxs[i]])
 
     plt.yscale('log')
-    plt.legend(frameon=False, bbox_to_anchor=[2, 1.1, 0, 0])
+    plt.legend(frameon=False, bbox_to_anchor=(1.05, 1), loc='upper left')
 
     plt.xlabel('Time (s)')
     plt.ylabel('$c_{%d}$'%(rank))
@@ -122,7 +122,7 @@ def fig10a(data_folder, save_folder):
 
 
     plt.yscale('log')
-    plt.legend(frameon=False, bbox_to_anchor=[2, 1.1, 0, 0])
+    plt.legend(frameon=False, bbox_to_anchor=(1.05, 1), loc='upper left')
 
     plt.xlabel('Time (s)')
     plt.ylabel(r'$|\mathrm{grad} \ c_{%d}|$'%(rank))
