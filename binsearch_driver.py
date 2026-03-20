@@ -62,7 +62,7 @@ def main():
         X = test['theta'].transpose(1, 2, 3, 0).reshape([l*r, b*c])
         
         # cg result with renyi-1/2 objective
-        renyi_filename = './results/tfi_l%d_r%d_b%d_c%d_renyihalf_cg_max_iter%d_.npz'%(l, r, b, c, 
+        renyi_filename = args.data_folder + 'tfi_l%d_r%d_b%d_c%d_renyihalf_cg_max_iter%d_.npz'%(l, r, b, c, 
         args.cg_max_iter_init)
         
     else:
@@ -79,7 +79,7 @@ def main():
         X = X/np.linalg.norm(X)
         
         # cg result with renyi-1/2 objective
-        renyi_filename = './results/randn_seed%d_l%d_r%d_b%d_c%d_renyihalf_cg_max_iter%d_.npz'%(args.seed, l, r, b, c,
+        renyi_filename = args.data_folder + 'randn_seed%d_l%d_r%d_b%d_c%d_renyihalf_cg_max_iter%d_.npz'%(args.seed, l, r, b, c,
         args.cg_max_iter_init)
     
     filename += 'l%d_r%d_b%d_c%d_'%(l, r, b, c)
@@ -112,7 +112,7 @@ def main():
 
             U, sv_before, Vh = scp.linalg.svd(AX, full_matrices=False, lapack_driver='gesvd')
 
-            np.savez(filename + str(it), X=X, Q_after=result['point'], Qs=result['Qs'], 
+            np.savez(filename + str(it), X=X, Q_after=result['point'], 
                      sv_before=sv_before, sv_after=result['sv_after'], 
                      time=result['ts'], cost=result['fvals'], dQs=result['dQs'], k=k, kr=kr, kl=kl, kopt=kopt)
             

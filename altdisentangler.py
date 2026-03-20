@@ -11,7 +11,7 @@ def trunc_svd(M, k):
 
     Mk = U[:, :k] @ np.diag(s[:k]) @ Vh[:k, :]
 
-    return Mr, U, s, Vh
+    return Mk, U, s, Vh
     
 def alt_disentangler(X, l, r, b, c, k, Q0=None, max_iter=500, ftol=1e-8, tol=1e-8):
     """
