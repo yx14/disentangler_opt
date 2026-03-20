@@ -9,21 +9,23 @@ The scripts are in python, and have been tested on macOS and Linux systems.
 The conda environment manager is used to install dependencies, through environment.yml or conda-lock.yml. A fork of the pymanopt package is installed, which enables logging for the trust-regions newton optimizer, and modifies numpy SVD calls to use the 'GESVD' LAPACK driver for numerical stability.
 
   The environment.yml file generates an environment called "disentangle": 
-
+```
   conda env create -f environment.yml
-
+```
   The conda-lock.yml is a lockfile that uses the conda-lock package (https://github.com/conda/conda-lock). To generate an environment called "disentangle" using conda-lock:
-    
+```    
   conda create -n disentangle conda-lock
   conda-lock install -n disentangle
+```
 
-
-# List of python files
+# List of main python files
 
 - altdisentangler.py : implementation of the alternating disentangler
 - benchmark_driver.py : disentangling benchmarking with different objectives, methods, and tensors
 - binsearch_driver.py : binary search implementation given a truncation error tolerance and tensor, which returns the optimal rank after disentangling
 - disentangler_utils.py : implementation of different objective functions and their Riemannian gradients. For the truncation error objective, the Riemannian Hessian is also implemented
+- make_figure.py : reproduce plots in manuscript
+- make_table.py : reproduce tables in manuscript 
 
 ## Tests 
 
@@ -159,12 +161,14 @@ python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj rank -rank 24 -disentan
 
 Table 1:
 ```
+python benchmark_driver.py -type randn -dim 12 -obj renyihalf -data_folder results/
 python binsearch_driver.py -type randn -dim 12 -disentangler cg -data_folder results/
 ```
 
 Table 2:
 ```
-python binsearch_driver.py -type tfi -dim 8 8 60 12 -dim 12 -disentangler cg -data_folder results/
+python benchmark_driver.py -type tfi -dim 8 8 60 12 -obj renyihalf -data_folder results/
+python binsearch_driver.py -type tfi -dim 8 8 60 12 -disentangler alt -data_folder results/
 ```
 
 ## Figure plotting
@@ -212,12 +216,10 @@ $
 
 The approximation is computed via a 2D generalization of time-evolving block decimation, using the following parameters: imaginary-time step size $d\tau = 0.025$, bond dimension $\chi=12$, and orthogonality hypersurface bond dimension $\eta=20$. For more information on this tensor network ansatz, please refer to:
 
-- Zaletel, M.P., Pollmann, F.: Isometric Tensor Network States in Two Dimen-
-sions. Physical Review Letters 124(3), 037201 (2020) https://doi.org/10.1103/PhysRevLett.124.037201
+- Zaletel, M.P., Pollmann, F.: Isometric Tensor Network States in Two Dimensions. Physical Review Letters 124(3), 037201 (2020) https://doi.org/10.1103/PhysRevLett.124.037201
 
 - Lin, S.-H., Zaletel, M.P., Pollmann, F.: Efficient simulation of dynamics in
-two-dimensional quantum spin systems with isometric tensor networks. Phys-
-ical Review B 106(24), 245102 (2022) https://doi.org/10.1103/PhysRevB.106.245102
+two-dimensional quantum spin systems with isometric tensor networks. Physical Review B 106(24), 245102 (2022) https://doi.org/10.1103/PhysRevB.106.245102
 
 
 
