@@ -29,14 +29,12 @@ The conda environment manager is used to install dependencies, through environme
 
 ## Tests 
 
-- check_basic_utils.py : check correctness of tensor composition map and its inverse 
-- check_gradient_and_hessian.py : check correctness of Riemannian gradients and hessians using pymanopt utility functions
+# Test files
 
-To run tests: 
-```
-python check_basic_utils.py
-python check_gradient_and_hessian.py
-```
+- tests/check_basic_utils.py : check correctness of tensor composition map and its inverse 
+- tests/check_gradient_and_hessian.py : check correctness of Riemannian gradients and hessians using pymanopt utility functions
+
+See tests/README.md for running tests.
 
 # Small Examples
 
@@ -198,7 +196,7 @@ python make_table.py 1 -data_folder manuscript_data/ -save_folder tables/
 
 Several example tensors are stored in the isotns_data directory. These tensors are intermediate outputs from an isometric tensor network state (isoTNS) ansatz.
 
-For random tensor benchmarking, we use seeds listed in (TODO).
+For random tensor benchmarking, we use seeds listed in ```benchmark_driver.py```.
 
 ## Tensor ordering convention
 
