@@ -208,9 +208,9 @@ The isoTNS tensors are initially ordered as $(c, l, r, b)$, and their indices pe
 
 The isoTNS ansatz approximates the ground state of the two-dimensional Transverse-Field Ising model (2D TFIM) on an 8x8 square lattice with open boundaries, which has Hamiltonian
 
-$
+$$
 H = -J \sum_{\langle i, j \rangle} Z_i Z_j - g \sum_i X_i.
-$
+$$
 
 The approximation is computed via a 2D generalization of time-evolving block decimation, using the following parameters: imaginary-time step size $d\tau = 0.025$, bond dimension $\chi=12$, and orthogonality hypersurface bond dimension $\eta=20$. For more information on this tensor network ansatz, please refer to:
 
